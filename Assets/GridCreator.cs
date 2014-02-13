@@ -19,7 +19,7 @@ public class GridCreator : MonoBehaviour {
 	public Transform[,] Grid;
 	
 	// Use this for initialization
-	void Start () {
+	void Start () { 
 		CreateGrid();
 		SetRandomNumbers();
 		SetAdjacents();
@@ -189,6 +189,8 @@ public class GridCreator : MonoBehaviour {
 						cell.transform.Translate(new Vector3(0, 0.5f, 0));
 					}
 				}
+
+				GameManager.TriggerMazeBuilt();
 				return;
 			}
 			// If we did not finish, then:
