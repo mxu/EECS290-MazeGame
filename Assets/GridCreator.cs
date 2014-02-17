@@ -191,7 +191,6 @@ public class GridCreator : MonoBehaviour {
 				}
 
 				GameManager.TriggerMazeBuilt();
-				PlayerController.spawnPlayer();
 				return;
 			}
 			// If we did not finish, then:
@@ -207,8 +206,8 @@ public class GridCreator : MonoBehaviour {
 		// We add this 'next' transform to the Set our function.
 		AddToSet(next);
 		// Recursively call this function as soon as it finishes.
-		//Invoke("FindNext", 0);
-		FindNext();
+		Invoke("FindNext", 0);
+		// FindNext();
 	}
 	
 	void BuildWalls() {
