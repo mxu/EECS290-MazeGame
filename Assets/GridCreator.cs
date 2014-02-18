@@ -17,6 +17,7 @@ public class GridCreator : MonoBehaviour {
 	public Transform CellPrefab;
 	public Vector3 Size;
 	public Transform[,] Grid;
+	public GameObject player;
 	
 	// Use this for initialization
 	void Start () { 
@@ -191,6 +192,7 @@ public class GridCreator : MonoBehaviour {
 				}
 
 				GameManager.TriggerMazeBuilt();
+				SpawnPlayer();
 				return;
 			}
 			// If we did not finish, then:
@@ -229,12 +231,18 @@ public class GridCreator : MonoBehaviour {
 			wall.localScale = scales[i];
 			wall.GetComponentInChildren<TextMesh> ().renderer.enabled = false;
 		}
+
 //		Transform ceiling = (Transform)Instantiate (CellPrefab, new Vector3 (Size.x / 2 - 0.5f, 3.0f, Size.z / 2 - 0.5f), Quaternion.identity);
 //		ceiling.renderer.material.color = Color.black;
 //		ceiling.localScale = new Vector3 (Size.x, 1, Size.z);
 //		ceiling.GetComponentInChildren<TextMesh> ().renderer.enabled = false;
 	}
-	
+
+	//Remove this method later, make it in the game event manager in the long run.
+	void SpawnPlayer(){
+		Instantiate (player, new Vector3 (0, 1, 0), Quaternion.identity);
+		Debug.Log ("The player has spawned!");
+	}
 	// Called once per frame.
 	void Update() {
 		
