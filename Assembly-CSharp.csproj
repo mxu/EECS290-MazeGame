@@ -46,9 +46,10 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\CellScript.cs" />
+     <Compile Include="Assets\Character\Health\HealthBar.cs" />
      <Compile Include="Assets\GameManager.cs" />
-     <Compile Include="Assets\GridCreator.cs" />
+     <Compile Include="Assets\Grid\CellScript.cs" />
+     <Compile Include="Assets\Grid\GridCreator.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
