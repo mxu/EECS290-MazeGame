@@ -18,7 +18,9 @@ public class GridCreator : MonoBehaviour {
 	public Vector3 Size;
 	public Transform[,] Grid;
 	public GameObject player;
-	
+	public int NumMonsters;
+	public GameObject MonsterPrefab;
+
 	// Use this for initialization
 	void Start () { 
 		CreateGrid();
@@ -27,6 +29,7 @@ public class GridCreator : MonoBehaviour {
 		SetStart();
 		FindNext();
 		BuildWalls();
+		SpawnMonsters();
 	}
 
 	// expose function for checking if a cell is part of the path
@@ -243,6 +246,23 @@ public class GridCreator : MonoBehaviour {
 		Instantiate (player, new Vector3 (0, 1, 0), Quaternion.identity);
 		Debug.Log ("The player has spawned!");
 	}
+
+	//spawns the monsters at random open cells
+	void SpawnMonsters(){
+		int i = 0;
+		while (i < NumMonsters) {
+			int xPos = Random.Range (0, (int)Size.x);
+			int zPos = Random.Range (0, (int)Size.z);
+			GameObject CurrentCell = GameObject.Find("(" + xPos + ",0," + zPos + ")");
+			if (CurrentCell.transform.position.y == 0f){
+				GameObject Monster = (GameObject) Instantiate(MonsterPrefab, new Vector3(xPos, .5f, zPos), Quaternion.identity);
+				Monster.SetActive(true);
+				Monster.name = "Monster " + i;
+				i++;
+			}
+		}
+	}
+
 	// Called once per frame.
 	void Update() {
 		

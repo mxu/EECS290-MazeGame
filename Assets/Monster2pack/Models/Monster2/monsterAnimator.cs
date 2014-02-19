@@ -7,25 +7,23 @@ public class monsterAnimator : MonoBehaviour {
 	private float walkSpeed = .01f;
 	private float turnSpeed = .005f;
 	private float timer = 3f;
-	private GameObject floor = null;
 
 	// Use this for initialization
 	void Start () {
-		floor = GameObject.Find("Floor");
-		transform.position = new Vector3(200, floor.transform.position.y + 1, 120);
+		transform.localScale -= new Vector3(.8f, .8f, .8f);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		GameObject FPS = GameObject.Find ("FPS");
-		if (((FPS.transform.position.x - transform.position.x) <= 1) && ((FPS.transform.position.x - transform.position.x) >=-1)  && ((FPS.transform.position.z - transform.position.z) <=1) && ((FPS.transform.position.z - transform.position.z) >= -1)){
+		GameObject FPS = GameObject.Find ("First Person Controller(Clone)");
+		if (((FPS.transform.position.x - transform.position.x) <= .1f) && ((FPS.transform.position.x - transform.position.x) >=-.1f)  && ((FPS.transform.position.z - transform.position.z) <=.1f) && ((FPS.transform.position.z - transform.position.z) >= -.1f)){
 			animation.Play("bitchslap");
 			
 		}
 		else{
 			if (((FPS.transform.position.x - transform.position.x) <= 10) && ((FPS.transform.position.x - transform.position.x) >=-10)  && ((FPS.transform.position.z - transform.position.z) <=10) && ((FPS.transform.position.z - transform.position.z) >= -10)){
 				animation.Play ("run");
-				transform.position = Vector3.Lerp(transform.position, (new Vector3(FPS.transform.position.x, floor.transform.position.y + 1, FPS.transform.position.z)), runSpeed);
+				transform.position = Vector3.Lerp(transform.position, (new Vector3(FPS.transform.position.x, .5f, FPS.transform.position.z)), runSpeed);
 				Vector3 targetPostition = new Vector3(FPS.transform.position.x, transform.position.y, FPS.transform.position.z);
 				transform.LookAt(targetPostition);
 			}
