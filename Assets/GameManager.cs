@@ -25,7 +25,8 @@ public static class GameManager {
 		}
 		if(Random.Range(0, 10)%2 == 0){
 			if(numberOfMonsters > 0){
-				GameObject.Instantiate(monsterPrefab, new Vector3(spawnCell.position.x, 0.5f, spawnCell.position.z), Quaternion.identity);
+				GameObject currentMonster = (GameObject)GameObject.Instantiate(monsterPrefab, new Vector3(spawnCell.position.x, 0.5f, spawnCell.position.z), Quaternion.identity);
+				currentMonster.transform.localScale -= new Vector3(.8f, .8f, .8f);
 				numberOfMonsters--;
 				Debug.Log("Monster spawned");
 			}

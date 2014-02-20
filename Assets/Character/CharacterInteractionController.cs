@@ -4,7 +4,7 @@ using System.Collections;
 public class CharacterInteractionController : MonoBehaviour {
 
 	//Happens when a monsters attacks a player
-	void OnControllerCollider(ControllerColliderHit col){
+	void OnTriggerEnter(Collider col){
 		Debug.Log("Collide!");
 		if(col.gameObject.CompareTag("Monster")){
 			dealDamage(.5f);
