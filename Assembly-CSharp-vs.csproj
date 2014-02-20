@@ -46,7 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Character\CharacterController.cs" />
+     <Compile Include="Assets\Character\CharacterInteractionController.cs" />
      <Compile Include="Assets\Character\Health\HealthBar.cs" />
      <Compile Include="Assets\GameManager.cs" />
      <Compile Include="Assets\Grid\CellScript.cs" />
