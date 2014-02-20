@@ -3,13 +3,10 @@ using System.Collections;
 
 public class CharacterInteractionController : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-
-	void OnCollisionEnter(Collision col){
-		if(col.transform.tag == "Monster"){
+	//Happens when a monsters attacks a player
+	void OnControllerCollider(ControllerColliderHit col){
+		Debug.Log("Collide!");
+		if(col.gameObject.CompareTag("Monster")){
 			dealDamage(.5f);
 			Debug.Log ("The player has been hit!");
 		}
@@ -19,9 +16,5 @@ public class CharacterInteractionController : MonoBehaviour {
 	static void dealDamage(float damage){
 		HealthBar.progress -= damage;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
 }

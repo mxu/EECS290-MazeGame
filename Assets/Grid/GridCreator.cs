@@ -18,6 +18,8 @@ public class GridCreator : MonoBehaviour {
 	public Vector3 Size;
 	public Transform[,] Grid;
 	public GameObject player;
+	//Monsters
+	public GameObject monsters;
 	
 	// Use this for initialization
 	void Start () { 
@@ -28,6 +30,11 @@ public class GridCreator : MonoBehaviour {
 		FindNext();
 		BuildWalls();
 	}
+
+	//To be called when start is pressed.
+	public static void Build(){
+	}
+
 
 	// expose function for checking if a cell is part of the path
 	public bool isOpen(int x, int z) {
@@ -205,6 +212,7 @@ public class GridCreator : MonoBehaviour {
 		
 		// The 'next' transform's material color becomes white.
 		next.renderer.material.color = Color.white;
+		GameManager.TriggerMonsterSpawn(next, Size.x, monsters);
 		// We add this 'next' transform to the Set our function.
 		AddToSet(next);
 		// Recursively call this function as soon as it finishes.

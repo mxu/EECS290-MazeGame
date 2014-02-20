@@ -48,9 +48,11 @@
   <ItemGroup>
      <Compile Include="Assets\Character\CharacterInteractionController.cs" />
      <Compile Include="Assets\Character\Health\HealthBar.cs" />
+     <Compile Include="Assets\GUI\GUIManager.cs" />
      <Compile Include="Assets\GameManager.cs" />
      <Compile Include="Assets\Grid\CellScript.cs" />
      <Compile Include="Assets\Grid\GridCreator.cs" />
+     <Compile Include="Assets\Monsters\Models\Monster2\monsterAnimator.cs" />
  <Reference Include="Library\ScriptAssemblies\Assembly-UnityScript-firstpass">
  <HintPath>Library\ScriptAssemblies\Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
