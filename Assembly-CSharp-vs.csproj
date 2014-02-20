@@ -51,7 +51,7 @@
      <Compile Include="Assets\GameManager.cs" />
      <Compile Include="Assets\Grid\CellScript.cs" />
      <Compile Include="Assets\Grid\GridCreator.cs" />
-     <Compile Include="Assets\Monster2pack\MonsterAnimator.cs" />
+     <Compile Include="Assets\Monster2pack\Models\MonsterAnimator.cs" />
  <Reference Include="Library\ScriptAssemblies\Assembly-UnityScript-firstpass">
  <HintPath>Library\ScriptAssemblies\Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
