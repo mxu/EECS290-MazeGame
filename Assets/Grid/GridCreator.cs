@@ -198,7 +198,7 @@ public class GridCreator : MonoBehaviour {
 					
 					if (!PathCells.Contains(cell)) {
 						// HINT: Try something here to make the maze 3D
-						cell.renderer.material.color = Color.black;
+						cell.renderer.material.color = new Color(.9f,.9f,.9f);
 						cell.transform.localScale = new Vector3(1, 2, 1);
 						cell.transform.Translate(new Vector3(0, 0.5f, 0));
 					}
