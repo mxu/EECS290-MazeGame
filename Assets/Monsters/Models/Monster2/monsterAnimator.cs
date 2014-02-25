@@ -21,6 +21,13 @@ public class MonsterAnimator : MonoBehaviour {
 		}
 	}
 
+	void OnCollisionEnter(Collision col) {
+		if(col.gameObject.CompareTag("Player")) {
+			Debug.Log ("Hit " + this.name);
+			animation.Play("bitchslap");
+		}
+	}
+
 	// Update is called once per frame
 	void Update () {
 //		GameObject FPS = GameObject.FindGameObjectWithTag("Player");

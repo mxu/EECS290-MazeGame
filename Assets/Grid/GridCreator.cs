@@ -25,9 +25,12 @@ public class GridCreator : MonoBehaviour {
 	public int NumMonsters;
 	public GameObject MonsterPrefab;
 
-	
+	public List<Transform> PathCells;			// The cells in the path through the grid.
+	public List<List<Transform>> AdjSet;		// A list of lists representing available adjacent cells
+
 	// Use this for initialization
 	void Start () { 
+		GameManager.MazeBuilt += MazeBuilt;
 		CreateGrid();
 		SetRandomNumbers();
 		SetAdjacents();
@@ -37,9 +40,15 @@ public class GridCreator : MonoBehaviour {
 //		SpawnMonsters();
 	}
 
+	private void MazeBuilt ()
+	{
+		SpawnPlayer();
+		SpawnMonsters();
+	}
+
 	//To be called when start is pressed.
 	public static void Build(){
-	}
+	}    
 
 
 	// expose function for checking if a cell is part of the path
@@ -117,8 +126,6 @@ public class GridCreator : MonoBehaviour {
 	 * Look at the Wikipedia page for more info on Prim's Algorithm.
 	 * http://en.wikipedia.org/wiki/Prim%27s_algorithm
 	 ********************************************************************/ 
-	public List<Transform> PathCells;			// The cells in the path through the grid.
-	public List<List<Transform>> AdjSet;		// A list of lists representing available adjacent cells.
 	/** Here is the structure:
 	 *  AdjSet{
 	 * 		[ 0 ] is a list of all the cells
@@ -203,9 +210,7 @@ public class GridCreator : MonoBehaviour {
 						cell.transform.Translate(new Vector3(0, 0.5f, 0));
 					}
 				}
-
 				GameManager.TriggerMazeBuilt();
-				SpawnPlayer();
 				return;
 			}
 			// If we did not finish, then:
@@ -218,7 +223,7 @@ public class GridCreator : MonoBehaviour {
 		
 		// The 'next' transform's material color becomes white.
 		next.renderer.material.color = Color.white;
-		GameManager.TriggerMonsterSpawn(next, Size.x, monsters);
+		//GameManager.TriggerMonsterSpawn(next, Size.x, monsters);
 		// We add this 'next' transform to the Set our function.
 		AddToSet(next);
 		// Recursively call this function as soon as it finishes.
@@ -254,24 +259,23 @@ public class GridCreator : MonoBehaviour {
 
 	//Remove this method later, make it in the game event manager in the long run.
 	void SpawnPlayer(){
-		Instantiate (player, new Vector3 (0, 1, 0), Quaternion.identity);
-		Debug.Log ("The player has spawned!");
+		GameObject p = (GameObject)Instantiate(player, new Vector3 (0, 1f, 0), Quaternion.identity);
+		Debug.Log("Player spawned at " + p.transform.position);
 	}
 
-//	void SpawnMonsters(){
-//		int i = 0;
-//		while (i < NumMonsters) {
-//			int xPos = Random.Range (0, (int)Size.x);
-//			int zPos = Random.Range (0, (int)Size.z);
-//			GameObject CurrentCell = GameObject.Find("(" + xPos + ",0," + zPos + ")");
-//			if (CurrentCell.transform.position.y == 0f){
-//				GameObject Monster = (GameObject) Instantiate(MonsterPrefab, new Vector3(xPos, .5f, zPos), Quaternion.identity);
-//				Monster.SetActive(true);
-//				Monster.name = "Monster " + i;
-//				i++;
-//			}
-//		}
-//	}
+	void SpawnMonsters(){
+		List<Transform> occupied = new List<Transform>();
+		for(int i = 0; i < NumMonsters; i++) {
+			Transform cell;
+			do cell = PathCells[Random.Range(1, PathCells.Count - 2)];
+			while(occupied.Contains(cell));
+			occupied.Add(cell);
+			GameObject monster = (GameObject)Instantiate(MonsterPrefab, new Vector3(cell.position.x, 1f, cell.position.z), Quaternion.identity);
+			monster.name = "Monster " + i;
+			monster.SetActive(true);
+			Debug.Log(monster.name + " spawned at " + monster.transform.position);
+		}
+	}
 
 	// Called once per frame.
 	void Update() {

@@ -12,6 +12,10 @@ public class CharacterInteractionController : MonoBehaviour {
 		}
 	}
 
+	void OnCollisionEnter(Collision col) {
+		Debug.Log ("Collision on player");
+	}
+
 	//Deals damage to the player
 	static void dealDamage(float damage){
 		HealthBar.progress -= damage;

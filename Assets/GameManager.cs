@@ -23,18 +23,13 @@ public static class GameManager {
 			numberOfMonsters = (int)sizeOfGrid/2;
 			Debug.Log(numberOfMonsters);
 		}
-		if(Random.Range(0, 10)%2 == 0){
+		if(Random.Range(0, 1) == 1){
 			if(numberOfMonsters > 0){
 				GameObject currentMonster = (GameObject)GameObject.Instantiate(monsterPrefab, new Vector3(spawnCell.position.x, 0.5f, spawnCell.position.z), Quaternion.identity);
 				currentMonster.transform.localScale -= new Vector3(.8f, .8f, .8f);
 				numberOfMonsters--;
-				Debug.Log("Monster spawned");
-			}
-			else{
+				Debug.Log("Monster spawned on cell [" + spawnCell.position.x + ", " + spawnCell.position.y + ")");
 			}
 		}
-
 	}
-
-
 }
