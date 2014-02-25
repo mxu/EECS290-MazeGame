@@ -1,0 +1,45 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{CB77BA11-1974-D089-FB0B-9E25ED14B131}") = "EECS290-MazeGame-Character", "Assembly-CSharp-firstpass-vs.csproj", "{0CB8BE25-BE19-F8EB-58C8-F54F5CF27FE1}"
+EndProject
+Project("{CB77BA11-1974-D089-FB0B-9E25ED14B131}") = "EECS290-MazeGame-Character", "Assembly-CSharp-vs.csproj", "{DBBC638A-4350-C212-07BD-4DF02C2DA1E4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0CB8BE25-BE19-F8EB-58C8-F54F5CF27FE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CB8BE25-BE19-F8EB-58C8-F54F5CF27FE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CB8BE25-BE19-F8EB-58C8-F54F5CF27FE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CB8BE25-BE19-F8EB-58C8-F54F5CF27FE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBBC638A-4350-C212-07BD-4DF02C2DA1E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBBC638A-4350-C212-07BD-4DF02C2DA1E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBBC638A-4350-C212-07BD-4DF02C2DA1E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBBC638A-4350-C212-07BD-4DF02C2DA1E4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+					GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+		Policies = $0
+		$0.TextStylePolicy = $1
+		$1.inheritsSet = null
+		$1.scope = text/x-csharp
+		$0.CSharpFormattingPolicy = $2
+		$2.inheritsSet = Mono
+		$2.inheritsScope = text/x-csharp
+		$2.scope = text/x-csharp
+		$0.TextStylePolicy = $3
+		$3.FileWidth = 120
+		$3.TabWidth = 4
+		$3.EolMarker = Unix
+		$3.inheritsSet = Mono
+		$3.inheritsScope = text/plain
+		$3.scope = text/plain
+	EndGlobalSection
+
+EndGlobal

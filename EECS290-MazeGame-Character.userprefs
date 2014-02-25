@@ -1,0 +1,16 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/GUI/GUIManager.cs">
+    <Files>
+      <File FileName="Assets/Character/CharacterInteractionController.cs" Line="22" Column="20" />
+      <File FileName="Assets/Monsters/Models/Monster2/MonsterAnimator.cs" Line="23" Column="5" />
+      <File FileName="Assets/Character/Health/HealthBar.cs" Line="6" Column="27" />
+      <File FileName="Assets/GameManager.cs" Line="24" Column="44" />
+      <File FileName="Assets/GUI/GUIManager.cs" Line="11" Column="17" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

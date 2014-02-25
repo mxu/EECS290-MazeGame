@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{469A6F97-045C-A83D-F957-7E211EC0DDF4}</ProjectGuid>
+	<ProjectGuid>{DBBC638A-4350-C212-07BD-4DF02C2DA1E4}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -46,16 +46,19 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Character\CharacterInteractionController.cs" />
      <Compile Include="Assets\Character\Health\HealthBar.cs" />
+     <Compile Include="Assets\GUI\GUIManager.cs" />
      <Compile Include="Assets\GameManager.cs" />
      <Compile Include="Assets\Grid\CellScript.cs" />
      <Compile Include="Assets\Grid\GridCreator.cs" />
+     <Compile Include="Assets\Monsters\Models\Monster2\MonsterAnimator.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{D9F58585-CFFF-79FF-A372-5C857D1758B9}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+      <Project>{0CB8BE25-BE19-F8EB-58C8-F54F5CF27FE1}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
     <ProjectReference Include="Assembly-UnityScript-firstpass.unityproj">
-      <Project>{A31EEA27-585E-1652-FAD2-D7E806D84778}</Project>      <Name>Assembly-UnityScript-firstpass</Name>    </ProjectReference>
+      <Project>{148E38FF-0AFD-506B-32C2-983AA177DC47}</Project>      <Name>Assembly-UnityScript-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
